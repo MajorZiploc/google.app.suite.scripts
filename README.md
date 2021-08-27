@@ -48,3 +48,5 @@ Edit the Code.js file of your project
 ## Clasp docs
 https://developers.google.com/apps-script/guides/clasp
 
+Scripts made under john.criticalmediaguys@gmail.com
+

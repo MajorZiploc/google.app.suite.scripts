@@ -39,9 +39,13 @@ clone SUB_FOLDER +PROJECT_GUID:
   cd {{SUB_FOLDER}} && clasp clone {{PROJECT_GUID}} && cat .clasp.json | sed -E 's/.*?scriptId":"([^"]*)?".*/\1/' > scriptId.txt;
 
 # Links projects to the remote google projects
-link:
+link-all:
   projects=`just get-projects`; for project in $projects; do cd "$project"; echo "Linking project at $PWD"; scriptId=`cat ./scriptId.txt`; clasp clone "$scriptId"; cd ..; done; true;
   
+# Links project to the remote google projects
+link +FOLDER_NAME:
+  cd {{FOLDER_NAME}}; scriptId=`cat ./scriptId.txt`; clasp clone "$scriptId";
+
 # Opens project in google projects in a browser
 open-project +FOLDER_NAME:
   cd {{FOLDER_NAME}}; clasp open;

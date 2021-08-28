@@ -1,4 +1,3 @@
-
 # Google App Suite Scripts
 
 A place to store app suite scripts
@@ -28,8 +27,13 @@ Install JS project dependencies
 Login to Google Drive
 > just login
 
-Link local projects - required to get .clasp.json file per project which is needed to push/pull projects from google projects
-> just link
+Link all local projects - required to get .clasp.json file per project which is needed to push/pull projects from google projects
+> just link-all
+
+OR
+
+Link a specific project
+> just link <subfolder>
 
 Clone google project - go to script.google.com to view your project details for the project_guid/scriptid in project settings
 > just clone <subfolder> <project_guid>

@@ -39,6 +39,9 @@ Clone google project - go to script.google.com to view your project details for 
 > just clone <subfolder> <project_guid>
 
 ## Developing a script
+Make sure that you are synced with the current state of the App Suite. Someone may be editing the script remotely without using this repo:
+> just pull ./project_folder
+
 This auto updates your google project while you edit the code
 > just push-on-save <subfolder>
 
@@ -51,6 +54,9 @@ Edit the Code.js file of your project
 
 ## Deploying a script
 NOTE: use single or double quotes around the first param. It MUST be a string that contains text, numbers, and special chars to work properly. Use single quotes if you want to ensure that bash does not evaluate variables inside the string.
+
+Make sure to sync the remote App Suite with your code changes by pushing them:
+> just push ./project_folder
 
 Example:
 > just deploy 'A description of the deployment' ./project_folder

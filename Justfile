@@ -20,23 +20,23 @@ pull-all:
 
 # Pull changes from remote google projects
 pull +FOLDER_NAME:
-  cd {{FOLDER_NAME}}; clasp pull;
+  cd "{{FOLDER_NAME}}"; clasp pull;
 
 # Pushes changes to remote google projects
 push +FOLDER_NAME:
-  cd {{FOLDER_NAME}}; clasp push;
+  cd "{{FOLDER_NAME}}"; clasp push;
 
 # deploy new version of script to remote google projects
 deploy DESCRIPTION +FOLDER_NAME:
-  cd {{FOLDER_NAME}}; clasp deploy -d {{DESCRIPTION}};
+  cd "{{FOLDER_NAME}}"; clasp deploy -d "{{DESCRIPTION}}";
 
 # Pushes changes to code to remote google projects as your save
 push-on-save +FOLDER_NAME:
-  cd {{FOLDER_NAME}}; clasp push --watch;
+  cd "{{FOLDER_NAME}}"; clasp push --watch;
 
 # clones a new project from the remote google projects given the projects scriptId
 clone SUB_FOLDER +PROJECT_GUID:
-  cd {{SUB_FOLDER}} && clasp clone {{PROJECT_GUID}} && cat .clasp.json | sed -E 's/.*?scriptId":"([^"]*)?".*/\1/' > scriptId.txt;
+  cd "{{SUB_FOLDER}}" && clasp clone "{{PROJECT_GUID}}" && cat .clasp.json | sed -E 's/.*?scriptId":"([^"]*)?".*/\1/' > scriptId.txt;
 
 # Links projects to the remote google projects
 link-all:
@@ -44,9 +44,9 @@ link-all:
   
 # Links project to the remote google projects
 link +FOLDER_NAME:
-  cd {{FOLDER_NAME}}; scriptId=`cat ./scriptId.txt`; clasp clone "$scriptId";
+  cd "{{FOLDER_NAME}}"; scriptId=`cat ./scriptId.txt`; clasp clone "$scriptId";
 
 # Opens project in google projects in a browser
 open-project +FOLDER_NAME:
-  cd {{FOLDER_NAME}}; clasp open;
+  cd "{{FOLDER_NAME}}"; clasp open;
 

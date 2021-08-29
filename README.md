@@ -49,6 +49,18 @@ After you make your changes, run:
 
 Edit the Code.js file of your project
 
+## Deploying a script
+NOTE: use single or double quotes around the first param. It MUST be a string that contains text, numbers, and special chars to work properly. Use single quotes if you want to ensure that bash does not evaluate variables inside the string.
+
+Example:
+> just deploy 'A description of the deployment' ./project_folder
+
+Example of what not to do:
+> just deploy A description of the deployment ./project_folder
+
+Example of what to be aware of - this will evaluate the $bash_var like a bash variable. Use single quotes if you want the text $bash_var in your deployment text. If you want the value of $bash_var to be in your deployment text, then use double quotes:
+> just deploy "A description of the deployment $bash_var" ./project_folder
+
 ## Clasp docs
 https://developers.google.com/apps-script/guides/clasp
 

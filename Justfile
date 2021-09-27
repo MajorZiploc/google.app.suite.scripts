@@ -1,3 +1,5 @@
+# vim: set filetype=bash :
+
 # install this repos dependencies
 install:
   npm install @google/clasp -g; yarn install;

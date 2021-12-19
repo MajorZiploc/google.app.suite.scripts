@@ -7,7 +7,7 @@ function sumEmployeeHoursForRangeOfDays(days) {
     : sumEmployeeHoursForDay(days);
 }
 
-function sumEmployeeHoursForDay(day) {
+function sumEmployeeHoursForHourRange(day) {
   const inputs = day.split('..');
   if (inputs.length != 2) {
     return 0;
@@ -19,3 +19,11 @@ function sumEmployeeHoursForDay(day) {
   }
   return end - begin;
 }
+
+function sumEmployeeHoursForDay(day) {
+  const hourRanges = day.split(',');
+  return hourRanges
+    .map(hourRange => sumEmployeeHoursForHourRange(hourRange))
+    .reduce((acc, ele) => acc + ele, 0);
+}
+

@@ -4,6 +4,10 @@
 install:
   npm install @google/clasp -g; yarn install;
 
+# gets the javascript dependencies
+build:
+  npm install @google/clasp -g; yarn install;
+
 # login to google projects
 login:
   clasp login

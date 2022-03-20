@@ -16,6 +16,10 @@ login:
 logout:
   clasp logout
 
+# remove derived files
+clean:
+  rm -rf ./node_modules
+
 # Get all projects root folders in this repo
 get-projects:
   find . -mindepth 1 -maxdepth 1 -type d -not -path "./.git" -not -path "./node_modules";
